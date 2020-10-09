@@ -473,7 +473,7 @@ For any other non-supported cluster environment, define your own class and pass 
 
 .. code-block:: python
 
-    from pytorch_lightning.cluster_environments import cluster_environment
+    from pytorch_lightning.environments import cluster_environment
 
     class MyCluster(ClusterEnvironment):
 
