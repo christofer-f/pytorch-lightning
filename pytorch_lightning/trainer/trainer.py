@@ -56,7 +56,7 @@ from pytorch_lightning.trainer.connectors.data_connector import DataConnector
 from pytorch_lightning.utilities.cloud_io import load as pl_load
 from pytorch_lightning.utilities.model_utils import is_overridden
 from pytorch_lightning.trainer.properties import TrainerProperties
-from pytorch_lightning.cluster_environments.cluster_environment import ClusterEnvironment
+from pytorch_lightning.environments.cluster_environment import ClusterEnvironment
 
 # warnings to ignore in trainer
 warnings.filterwarnings(
