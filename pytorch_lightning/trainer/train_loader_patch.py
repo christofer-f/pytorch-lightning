@@ -34,11 +34,13 @@ class MagicClass(object):
     def __iter__(self):
         if isinstance(self.d, dict):
             gen = {}
-            for k,v in self.d.items():
-                gen[k] = itertools.cycle(v)
             for i in range(self.l):
                 rv = {}
                 for k,v in self.d.items():
+                    # If reaching the end of the iterator, recreate one
+                    # because shuffle=True in dataloader, the iterator will have a different order
+                    if i % len(v) == 0: 
+                        gen[k] = iter(v)
                     rv[k] = next(gen[k])
                 yield rv
         else:
